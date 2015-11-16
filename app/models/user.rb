@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable
   belongs_to :home
+  validates_formatting_of :phone_number, using: :us_phone
 end
